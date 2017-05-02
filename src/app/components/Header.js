@@ -3,7 +3,7 @@ import React from 'react';
 export class Header extends React.Component {
 	render() {
 		return (
-			<nav class="navbar navbar-default">
+			<nav className="navbar navbar-default">
 				<div className="container">
 					<div className="navbar-header">
 						<ul className="nav navbar-nav">
