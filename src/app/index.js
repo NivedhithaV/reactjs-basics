@@ -10,7 +10,7 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			homeLink: "Stateless Home"
+			homeLink: "Stateless Header"
 		}
 	}
 
@@ -25,7 +25,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		var user = {
+		const user = {
 			name: "Anna",
 			hobbies: ["sports", "reading"]
 		};
@@ -47,7 +47,8 @@ class App extends React.Component {
 							  age={23}
 							  user={user}
 							  greet={this.onGreet}
-							  changeLink={this.onChangeLink.bind(this)}>
+							  changeLink={this.onChangeLink.bind(this)}
+							  initialName={this.state.homeLink}>
 							<p>This is a child paragraph!</p>
 						</Home>
 					</div>

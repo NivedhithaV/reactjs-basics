@@ -6,12 +6,18 @@ export class Home extends React.Component {
 	constructor(props) {
 		super();
 		this.state = {
-			homeLink: "Changed Home"
+			homeLink: props.initialName
 		};
 	}
 
 	onChangeLink() {
 		this.props.changeLink(this.state.homeLink);
+	}
+
+	onHandleChange(event) {
+		this.setState({
+			homeLink: event.target.value
+		});
 	}
 
 	render() {
@@ -38,6 +44,9 @@ export class Home extends React.Component {
 					Greet
 				</button>
 				<hr/>
+				<input type="text"
+					   value={this.state.homeLink}
+					   onChange={(event) => this.onHandleChange(event)}/>
 				<button className="btn btn-primary"
 						onClick={this.onChangeLink.bind(this)}>
 					Change Header Link
@@ -54,5 +63,6 @@ Home.propTypes = {
 	user: PropTypes.object,
 	children: PropTypes.element.isRequired,
 	greet: PropTypes.func,
-	changeLink: PropTypes.func
+	changeLink: PropTypes.func,
+	initialName: PropTypes.string
 };
