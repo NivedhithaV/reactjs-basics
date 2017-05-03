@@ -6,6 +6,24 @@ import { Events } from './components/Events';
 import { StatelessHeader } from './components/StatelessHeader';
 
 class App extends React.Component {
+
+	constructor() {
+		super();
+		this.state = {
+			homeLink: "Stateless Home"
+		}
+	}
+
+	onGreet() {
+		alert("hello!");
+	}
+
+	onChangeLink(newName) {
+		this.setState({
+			homeLink: newName
+		});
+	}
+
 	render() {
 		var user = {
 			name: "Anna",
@@ -20,14 +38,16 @@ class App extends React.Component {
 				</div>
 				<div className="row">
 					<div className="col-xs-10 col-xs-offset-1">
-						<StatelessHeader homeLink="Home in Stateless Header"/>
+						<StatelessHeader homeLink={this.state.homeLink}/>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-xs-10 col-xs-offset-1">
 						<Home name={"Max"}
 							  age={23}
-							  user={user}>
+							  user={user}
+							  greet={this.onGreet}
+							  changeLink={this.onChangeLink.bind(this)}>
 							<p>This is a child paragraph!</p>
 						</Home>
 					</div>
