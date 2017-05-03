@@ -5,16 +5,25 @@ export class Events extends React.Component {
 
 	constructor(props) {
 		super();
-		this.age = props.age;
+		this.state = {
+			age: props.initialAge,
+			status: 0
+		};
 	}
 
 	onMakeOlder() {
-		this.age += 3;
+		this.setState({
+			age: this.state.age + 3
+		});
+		// this.age += 3;
 		console.log(this.age);
 	}
 
 	onMakeYounger() {
-		this.age -= 3;
+		this.setState({
+			age: this.state.age - 3
+		});
+		// this.age -= 3;
 		console.log(this.age);
 	}
 
@@ -22,7 +31,8 @@ export class Events extends React.Component {
 		return (
 			<div>
 				<p>Events Component</p>
-				<p>Your name is {this.props.name}, your age is {this.age}</p>
+				<p>Your name is {this.props.name}, your age is <b>{this.state.age}</b>.
+				   Status: {this.state.status}</p>
 				<hr/>
 				<button className="btn btn-primary"
 						onClick={this.onMakeOlder.bind(this)}>
@@ -41,5 +51,5 @@ export class Events extends React.Component {
 
 Events.propTypes = {
 	name: PropTypes.string,
-	age: PropTypes.number
+	initialAge: PropTypes.number
 };

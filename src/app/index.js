@@ -13,15 +13,24 @@ class App extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<Header/>
+					<div className="col-xs-10 col-xs-offset-1">
+						<Header/>
+					</div>
 				</div>
 				<div className="row">
-					<Home name={"Max"} age={23} user={user}>
-						<p>This is a child paragraph!</p>
-					</Home>
+					<div className="col-xs-10 col-xs-offset-1">
+						<Home name={"Max"}
+							  age={23}
+							  user={user}>
+							<p>This is a child paragraph!</p>
+						</Home>
+					</div>
 				</div>
 				<div className="row">
-					<Events name={"Anna"} age={28}/>
+					<div className="col-xs-10 col-xs-offset-1">
+						<Events name={"Anna"}
+								initialAge={28}/>
+					</div>
 				</div>
 			</div>
 		);
