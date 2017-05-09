@@ -16,15 +16,14 @@ export class Events extends React.Component {
 			age: this.state.age + 3
 		});
 		// this.age += 3;
-		console.log(this.age);
+		console.log(this.state.age);
 	}
 
 	onMakeYounger() {
 		this.setState({
 			age: this.state.age - 3
 		});
-		// this.age -= 3;
-		console.log(this.age);
+		console.log(this.state.age);
 	}
 
 	render() {

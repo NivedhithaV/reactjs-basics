@@ -31,20 +31,25 @@ class App extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log("COMPONENT WILL RECEIVE PROPS - " + nextProps);
+		console.log("COMPONENT WILL RECEIVE PROPS - ", nextProps);
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		console.log("SHOULD COMPONENT UPDATE - " + nextProps + " / " + nextState);
+		console.log("SHOULD COMPONENT UPDATE - ", nextProps, " / ", nextState);
+		/*
+		if(nextState.status === 1){
+			return false;
+		}
+		*/
 		return true;
 	}
 
 	componentWillUpdate(nextProps, nextState) {
-		console.log("COMPONENT WILL UPDATE - " + nextProps + " / " + nextState);
+		console.log("COMPONENT WILL UPDATE - ", nextProps, " / ", nextState);
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		console.log("COMPONENT WILL MOUNT - " + prevProps + " / " + prevState);
+		console.log("COMPONENT WILL MOUNT - ", prevProps, " / ", prevState);
 	}
 
 	componentWillUnmount() {
@@ -105,6 +110,7 @@ class App extends React.Component {
 							Toggle Mount Home Component
 						</button>
 					</div>
+					<hr/>
 				</div>
 				<div className="row">
 					<div className="col-xs-10 col-xs-offset-1">
